@@ -1,0 +1,22 @@
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: INFO
+
+info:
+  application:
+    name: Spring Boot Template Application
+    description: Template for Spring Bott application
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, prometheus
+  endpoint:
+    health:
+      show-components: always
+  info:
+    env:
+      enabled: true

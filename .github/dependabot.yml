@@ -1,0 +1,24 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+#- By default, the repo created from dssp-springboot-software-template includes .dependabot.yml file.
+#- It runs scan daily to check if the dependency versions are up to date. If a newer version of dependency is available,
+#  it will create PR automatically to target branch security-patch.
+#- After the builds on security-patch run successfully, you can merge the new version to master branch.
+#- If you have a preferred target branch, change "target_branch" parameter in config.yml.
+#- Dependabot needs the specified target branch to exist in order to the scan.
+#- For more information about how it works, please check [how-it-works](https://dependabot.com/#how-it-works)
+#- For config.yml details, please check [config-file](https://dependabot.com/docs/config-file/)
+
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"

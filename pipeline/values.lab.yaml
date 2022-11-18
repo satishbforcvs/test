@@ -1,0 +1,14 @@
+internalPort: 8080
+livenessProbe:
+  httpGet:
+    path: /actuator/health
+readinessProbe:
+  httpGet:
+    path: /actuator/health
+env:
+  ENVIRONMENT: ${env.name}
+
+specTemplateMetadataAnnotations:
+  prometheus.io/scrape: true # determines if a pod should be scraped. Set to true to enable scraping.
+  prometheus.io/path: /actuator/prometheus # determines the path to scrape metrics at. Defaults to /metrics.
+  prometheus.io/port: 8080 # determines the port to scrape metrics at. Defaults to 80.
